@@ -1,24 +1,25 @@
 #include<iostream>
 using namespace std;
 int main(int argc, char* argv[]) {
-    int x = 0;
-    int l = 0; 
-    int r = 0; 
-    l = 1;
-    r = 1000000001;
-    char a;
-    do {
-        x = (l + r)/2;
-        cout << x << endl; 
- cout.flush();
-        cin >> a;
-        if (a == '>') {
-            l = x; 
+    int l = 1;
+    int r = 1000000000;
+    r++;
+    int pos = (l+r)/2;
+    cout << pos;
+    while(true)
+    {
+        char sym;
+        cin >> sym;
+        if(sym == '=') return EXIT_SUCCESS;
+        if(sym == '>')
+        {
+            l = pos;
         }
-        else {
-            r = x;
+        if(sym == '<')
+        {
+            r = pos;
         }
-    } while (a != '=');
-
-    return EXIT_SUCCESS;
+        pos = (l+r)/2;
+        cout << pos;
+    }
 }
