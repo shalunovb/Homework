@@ -10,12 +10,13 @@ int main()
 	//Load data
 	ifstream fin("INPUT.txt");
  	fin >> N;
- 	int mass[N+1];
+ 	int mass[N+2];
  	for(int i=0;i<N;++i)
  	{
- 		fin >> mass[i];	
+ 		fin >> mass[i+1];	
 	}
-	mass[N] = mass[0];
+	mass[0] = mass[N];
+	mass[N] = mass[1];
  	fin.close();
  	
  	int Max = 0;
